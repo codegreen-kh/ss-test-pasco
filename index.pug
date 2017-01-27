@@ -1,16 +1,13 @@
 doctype html
-html(lang="en")
+html(lang="en", class="no-js")
   head
-    title= pageTitle
-    script(type='text/javascript').
-      if (foo) bar(1 + 5)
+    title= "SS Test Pasco"
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible", content="ie=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="assets/css/app.css")
+    link(rel="stylesheet", href="assets/css/custom.css")
   body
-    h1 Pug - node template engine
-    #container.col
-      if youAreUsingPug
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Pug is a terse and simple templating language with a
-        strong focus on performance and powerful features.
+    #div.row
+      h1 Pug - node template engine!!!
+
