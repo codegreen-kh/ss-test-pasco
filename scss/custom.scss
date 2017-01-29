@@ -1,0 +1,128 @@
+@font-face {
+	font-family: "MontserratRegular";
+	src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+@font-face {
+	font-family: "FontAwesome";
+	src: url("../fonts/FontAwesome/fontawesome-webfont.eot");
+}
+
+@font-face {
+	font-family: "FontAwesome";
+	src: url("../fonts/FontAwesome/fontawesome-webfont.ttf");
+}
+
+.row {
+	max-width: 1170px;
+}
+
+.footer {
+	width: 100%;
+	background-color: #3f51b5;
+}
+
+.topmenu {
+	height: 40px;
+	line-height: 40px;
+	background-color: #191919;
+	vertical-align: middle;
+}
+
+.topmenu-content {
+	vertical-align: middle;
+}
+
+.topmenu i {
+	color: #707070;
+	padding-right: 15px;
+	opacity: 0.5;
+}
+
+.topmenu-content .is-dropdown-submenu-parent a:after {
+	display: none !important;
+}
+
+.topmenu-content section a {
+	font-family: MontserratRegular;
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #8e8e8e;
+	padding-right: 0 !important;
+	opacity: 0.5;
+}
+
+.topmenu-content .is-dropdown-submenu-parent a i {
+	padding-left: 5px;
+	position: relative;
+	top: -4px;
+	font-weight: 600;
+	margin-left: 0;
+	margin-right: 0;
+	padding-right: 0;
+}
+
+.fa-globe, .fa-user-circle {
+	padding-right: 10px;
+	opacity: 0.38;
+}
+
+.topmenu-content .is-dropdown-submenu-parent li {
+	padding-right: 0;
+}
+
+.topmenu-content ul.dropdown {
+	display: inline;
+}
+
+.collapse {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+div.separator {
+	width: 1px;
+	background-color: #bebebe;
+	height: 20px;
+	opacity: 0.38;
+	line-height: 20px;
+	margin-top: 10px;
+}
+
+a.signin {
+	margin-right: 16px;
+}
+
+.bx-viewport {
+	border: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	box-shadow: none !important;
+}
+
+.bx-wrapper {
+	margin-bottom: 0 !important;
+}
+
+.bx-pager {
+	display: none;
+}
+
+ul.bxslider {
+	margin-left: 0;
+	margin-top: 0;
+}
+
+ul.bxslider li {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+ul.bxslider img {
+	height: 800px;
+	max-height: 800px;
+	width: 1920px;
+	min-width: 1920px;
+	display: block;
+	margin: auto auto;
+}

@@ -1,16 +1,47 @@
 doctype html
-html(lang="en")
-  head
-    title= pageTitle
-    script(type='text/javascript').
-      if (foo) bar(1 + 5)
-  body
-    h1 Pug - node template engine
-    #container.col
-      if youAreUsingPug
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Pug is a terse and simple templating language with a
-        strong focus on performance and powerful features.
+html(lang="en", class="no-js")
+	head
+		title= "SS Test Pasco"
+		meta(charset="utf-8")
+		meta(http-equiv="x-ua-compatible", content="ie=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet", href="assets/css/app.css", type="text/css")
+		link(rel="stylesheet", href="assets/fonts/FontAwesome/font-awesome.min.css", type="text/css")
+		link(rel="stylesheet", href="plugins/jquery.bxslider/jquery.bxslider.css", type="text/css")
+		link(rel="stylesheet", href="assets/css/custom.css", type="text/css")
+		script(src="bower_components/jquery/dist/jquery.min.js")
+		script(src="bower_components/foundation-sites/dist/js/foundation.min.js")
+		script(src="plugins/jquery.bxslider/jquery.bxslider.min.js")
+		script(src="assets/js/app.js")
+		
+	body
+		div.header
+			div.topmenu
+				div.topmenu-content.row
+					div.lagre-6.medium-6.columns.collapse
+						- var socialicons = ['fa-facebook', 'fa-twitter', 'fa-pinterest-p', 'fa-vk', 'fa-google-plus', 'fa-behance', 'fa-dribbble', 'fa-instagram'];
+						for icon in socialicons
+							a(href='javascript:alert("tbd")')
+								i(class='fa ' + icon, aria-hidden='true')
+					div.lagre-4.medium-4.columns.collapse
+						section.float-right
+							ul.dropdown.menu.float-right(data-dropdown-menu)
+								li
+									a(href='#')
+										div(class='fa fa-globe', aria-hidden='true')
+										span Eng
+										i(class='fa fa-angle-down', aria-hidden='true')
+										ul.menu
+											li
+												a(href='#') Eng
+											li
+												a(href='#') Rus
+							div.separator.float-right
+							a.signin.float-right(href='#')
+								div(class='fa fa-user-circle', aria-hidden='true')
+								span Sign In
+			ul.bxslider
+				li
+					img(src='assets/img/header_bg.jpg')
+				li
+					img(src='assets/img/header_bg.jpg')
