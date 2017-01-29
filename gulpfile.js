@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var pug  = require('gulp-pug');
+var plumber = require("gulp-plumber");
 var $    = require('gulp-load-plugins')();
 
 var sassPaths = [
