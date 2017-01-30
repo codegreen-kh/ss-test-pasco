@@ -8,6 +8,7 @@ html(lang="en", class="no-js")
 		link(rel="stylesheet", href="assets/css/app.css", type="text/css")
 		link(rel="stylesheet", href="assets/fonts/FontAwesome/font-awesome.min.css", type="text/css")
 		link(rel="stylesheet", href="plugins/jquery.bxslider/jquery.bxslider.css", type="text/css")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons", type="text/css")
 		link(rel="stylesheet", href="assets/css/custom.css", type="text/css")
 		script(src="bower_components/jquery/dist/jquery.min.js")
 		script(src="bower_components/foundation-sites/dist/js/foundation.min.js")
@@ -15,13 +16,14 @@ html(lang="en", class="no-js")
 		script(src="assets/js/app.js")
 		
 	body
+		include mixins/mediapost
 		div.header
 			div.topmenu
 				div.topmenu-content.row
 					div.lagre-6.medium-6.columns.collapse
 						- var socialicons = ['fa-facebook', 'fa-twitter', 'fa-pinterest-p', 'fa-vk', 'fa-google-plus', 'fa-behance', 'fa-dribbble', 'fa-instagram'];
 						for icon in socialicons
-							a(href='javascript:alert("tbd")')
+							a(href='#')
 								i(class='fa ' + icon, aria-hidden='true')
 					div.lagre-4.medium-4.columns.collapse
 						section.float-right
@@ -90,19 +92,65 @@ html(lang="en", class="no-js")
 						div.slider-content.row
 							div.large-2.medium-2.columms.float-left &nbsp;
 							div.large-8.medium-8.columns
-								h4 Inspiration
-								h2 5 ways milllenials can start building their future today
-								a.button.readmore(href='#') Read more
-								a(href='#')
-									img.center.avatar(src='assets/img/henry_little.png')
-								a.avatar(href='#') Henry Little
-								label.account-info April 28, 2016&nbsp;&nbsp;10:15
-								a.account-info(href='#')
-									i.fa.fa-comments(aria-hidden='hidden')
-									span Comments (28)
-								a.account-info(href='#')
-									i.fa.fa-heart-o(aria-hidden='hidden')
-									span Likes (07)
+								div.content-inner
+									h4 Inspiration
+									h2 5 ways milllenials can start building their future today
+									a.button.readmore(href='#') Read more
+									a(href='#')
+										img.center.avatar(src='assets/img/henry_little.png')
+									a.avatar(href='#') Henry Little
+									label.account-info April 28, 2016&nbsp;&nbsp;10:15
+									a.account-info(href='#')
+										i.fa.fa-comments(aria-hidden='hidden')
+										span Comments (28)
+									a.account-info(href='#')
+										i.fa.fa-heart-o(aria-hidden='hidden')
+										span Likes (07)
 							div.large-2.medium-2.columns &nbsp;
 				li
 					img(src='assets/img/header_bg.jpg')
+		div.main-content
+			div.sort-bar
+				div.row
+					div.sort-bar-inner.large-12.medium-12.columms.collapse
+						p Sort blog:
+						a.button.sort-bar-button.active(href='#') All
+						a.button.sort-bar-button(href='#') Photography
+						a.button.sort-bar-button(href='#') Lifestyle
+						a.button.sort-bar-button(href='#') Trip
+						a.button.sort-bar-button(href='#') Inspiration
+			div.main-content-sep
+			div.row.posts-list
+				div.large-9.medium-9.columms.collapse
+
+					+media-post({media: 'assets/img/main-video.png', fullwidth: true, category: 'Lifestyle', comments: 7, likes: 15,title: '10 Things To Do To Change Your Life Forever', description: 'The one constant thing in our life is change. We cannot avoid it and the more we resist change the tougher our life becomes. I know this because I was very skilled at deflecting change in life.', authorphoto: 'assets/img/henry_little_2.png', author: 'Henry Little', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+
+					+media-post({media: 'assets/img/main-video.png', fullwidth: false, category: 'Lifestyle', comments: 7, likes: 15,title: '4 Natural Ways To Have Young Skin', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.', authorphoto: 'assets/img/james_leman.png', author: 'James Leman', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+
+					+media-post({media: 'assets/img/main-video.png', fullwidth: false, category: 'Lifestyle', comments: 7, likes: 15,title: '4 Natural Ways To Have Young Skin', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.', authorphoto: 'assets/img/james_leman.png', author: 'James Leman', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+
+					+media-post({media: 'assets/img/main-video.png', fullwidth: false, category: 'Lifestyle', comments: 7, likes: 15,title: '4 Natural Ways To Have Young Skin', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.', authorphoto: 'assets/img/james_leman.png', author: 'James Leman', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+
+					div.row.nomargin
+						div.sort-bar-inner.large-4.medium-4.columms
+	
+							+media-post({media: 'assets/img/main-video.png', fullwidth: false, category: 'Lifestyle', comments: 7, likes: 15,title: '4 Natural Ways To Have Young Skin', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.', authorphoto: 'assets/img/james_leman.png', author: 'James Leman', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+	
+						div.sort-bar-inner.large-4.medium-4.columms
+	
+							+media-post({media: 'assets/img/main-video.png', fullwidth: false, category: 'Lifestyle', comments: 7, likes: 15,title: '4 Natural Ways To Have Young Skin', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.', authorphoto: 'assets/img/james_leman.png', author: 'James Leman', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+	
+						div.sort-bar-inner.large-4.medium-4.columms
+	
+							+media-post({media: 'assets/img/main-video.png', fullwidth: false, category: 'Lifestyle', comments: 7, likes: 15,title: '4 Natural Ways To Have Young Skin', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.', authorphoto: 'assets/img/james_leman.png', author: 'James Leman', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+	
+					div.row.nomargin
+						div.sort-bar-inner.large-6.medium-6.columms
+	
+							+media-post({media: 'assets/img/main-video.png', fullwidth: false, category: 'Lifestyle', comments: 7, likes: 15,title: '4 Natural Ways To Have Young Skin', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.', authorphoto: 'assets/img/james_leman.png', author: 'James Leman', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+	
+						div.sort-bar-inner.large-6.medium-6.columms
+	
+							+media-post({media: 'assets/img/main-video.png', fullwidth: false, category: 'Lifestyle', comments: 7, likes: 15,title: '4 Natural Ways To Have Young Skin', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.', authorphoto: 'assets/img/james_leman.png', author: 'James Leman', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+
+				div.large-3.medium-3.columms.collapse.float-left

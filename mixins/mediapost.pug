@@ -1,0 +1,47 @@
+mixin media-post(post)
+	div.post-wrapper
+		div.row.nomargin
+			- if (post.fullwidth) {
+				div.large-12.medium-12.columms.collapse
+					+media-part(post)
+					+info-part(post)
+			- } else {
+				div.large-3.medium-3.columms.float-left.collapse
+					+media-part(post)
+			- }
+	
+			- if (!post.fullwidth) {
+				div.large-9.medium-9.columms.float-left.collapse
+					+info-part(post)
+			- }
+
+mixin media-part(post)
+	div.media
+		i.playbtn.material-icons play_circle_outline
+		img.imgmedia(src=post.media)
+		div.media-info
+			p.category= post.category
+			section
+				a.comments(href='#')
+					i.fa.fa-comments(aria-hidden='hidden')
+					span &nbsp;(#{post.comments})
+				a.likes(href='#')
+					i.fa.fa-heart-o(aria-hidden='hidden')
+					span &nbsp;(#{post.likes})
+		div.clearfix
+
+mixin info-part(post)
+	div.media-post
+		h4= post.title
+		p= post.description
+	hr
+	div.author-info
+		a.photo(href='#')
+			img(src= post.authorphoto)
+		div.author-details
+			a(href='#')
+				h6= post.author
+			p!= post.date
+		a.move-vert
+			i.material-icons more_vert
+	div.clearfix
