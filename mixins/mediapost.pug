@@ -6,18 +6,19 @@ mixin media-post(post)
 					+media-part(post)
 					+info-part(post)
 			- } else {
-				div.large-3.medium-3.columms.float-left.collapse
+				div.large-4.medium-4.columms.float-left.collapse.min-width-300
 					+media-part(post)
 			- }
 	
 			- if (!post.fullwidth) {
-				div.large-9.medium-9.columms.float-left.collapse
+				div.large-8.medium-8.columms.float-left.collapse.min-width-300
 					+info-part(post)
 			- }
 
 mixin media-part(post)
 	div.media
-		i.playbtn.material-icons play_circle_outline
+		- if (!post.noplay)
+			i.playbtn.material-icons play_circle_outline
 		img.imgmedia(src=post.media)
 		div.media-info
 			p.category= post.category
@@ -33,7 +34,10 @@ mixin media-part(post)
 mixin info-part(post)
 	div.media-post
 		h4= post.title
-		p= post.description
+		- if (post.fadeElipsis)
+			p.fade-elipsis= post.description
+		- else
+			p= post.description
 	hr
 	div.author-info
 		a.photo(href='#')

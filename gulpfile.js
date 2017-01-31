@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var pug  = require('gulp-pug');
 var plumber = require("gulp-plumber");
+var notify = require("gulp-notify");
 var $    = require('gulp-load-plugins')();
 
 var sassPaths = [
@@ -13,7 +14,7 @@ var sassPaths = [
 
 var path = {
     src: {
-        pug: '*.pug',
+        pug: '**.pug',
         scss: 'scss/*.scss'
     },
     dest: {
@@ -28,7 +29,9 @@ var path = {
 
 gulp.task('html', function () {
     gulp.src(path.src.pug)
-        .pipe(pug({}))
+        .pipe(pug({}).on('error', notify.onError(function (error) {
+    		return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
+	})))
         .pipe(gulp.dest(path.dest.html))
         //.pipe(connect.reload())
 });
