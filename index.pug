@@ -8,20 +8,21 @@ html(lang="en", class="no-js")
 		link(rel="stylesheet", href="assets/css/app.css", type="text/css")
 		link(rel="stylesheet", href="assets/fonts/FontAwesome/font-awesome.min.css", type="text/css")
 		link(rel="stylesheet", href="plugins/jquery.bxslider/jquery.bxslider.css", type="text/css")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons", type="text/css")
 		link(rel="stylesheet", href="assets/css/custom.css", type="text/css")
 		script(src="bower_components/jquery/dist/jquery.min.js")
 		script(src="bower_components/foundation-sites/dist/js/foundation.min.js")
 		script(src="plugins/jquery.bxslider/jquery.bxslider.min.js")
 		script(src="assets/js/app.js")
-		
 	body
+		include mixins/allmixins
 		div.header
 			div.topmenu
 				div.topmenu-content.row
 					div.lagre-6.medium-6.columns.collapse
 						- var socialicons = ['fa-facebook', 'fa-twitter', 'fa-pinterest-p', 'fa-vk', 'fa-google-plus', 'fa-behance', 'fa-dribbble', 'fa-instagram'];
 						for icon in socialicons
-							a(href='javascript:alert("tbd")')
+							a(href='#')
 								i(class='fa ' + icon, aria-hidden='true')
 					div.lagre-4.medium-4.columns.collapse
 						section.float-right
@@ -90,19 +91,145 @@ html(lang="en", class="no-js")
 						div.slider-content.row
 							div.large-2.medium-2.columms.float-left &nbsp;
 							div.large-8.medium-8.columns
-								h4 Inspiration
-								h2 5 ways milllenials can start building their future today
-								a.button.readmore(href='#') Read more
-								a(href='#')
-									img.center.avatar(src='assets/img/henry_little.png')
-								a.avatar(href='#') Henry Little
-								label.account-info April 28, 2016&nbsp;&nbsp;10:15
-								a.account-info(href='#')
-									i.fa.fa-comments(aria-hidden='hidden')
-									span Comments (28)
-								a.account-info(href='#')
-									i.fa.fa-heart-o(aria-hidden='hidden')
-									span Likes (07)
+								div.content-inner
+									h4 Inspiration
+									h2 5 ways milllenials can start building their future today
+									a.button.readmore(href='#') Read more
+									a(href='#')
+										img.center.avatar(src='assets/img/henry_little.png')
+									a.avatar(href='#') Henry Little
+									label.account-info April 28, 2016&nbsp;&nbsp;10:15
+									a.account-info(href='#')
+										i.fa.fa-comments(aria-hidden='hidden')
+										span Comments (28)
+									a.account-info(href='#')
+										i.fa.fa-heart-o(aria-hidden='hidden')
+										span Likes (07)
 							div.large-2.medium-2.columns &nbsp;
 				li
 					img(src='assets/img/header_bg.jpg')
+		div.main-content
+			div.sort-bar
+				div.row
+					div.sort-bar-inner.large-12.medium-12.columms.collapse
+						p Sort blog:
+						a.button.sort-bar-button.active(href='#') All
+						a.button.sort-bar-button(href='#') Photography
+						a.button.sort-bar-button(href='#') Lifestyle
+						a.button.sort-bar-button(href='#') Trip
+						a.button.sort-bar-button(href='#') Inspiration
+			div.main-content-sep
+			div.row.posts-list.transparent
+				div.large-9.medium-9.columms.collapse.float-left.transparent
+					div.padding-right-20
+						+media-post({media: 'assets/img/main-video.png',fadeElipsis: false, fullwidth: true, category: 'Lifestyle', comments: 7, likes: 15,title: '10 Things To Do To Change Your Life Forever', description: 'The one constant thing in our life is change. We cannot avoid it and the more we resist change the tougher our life becomes. I know this because I was very skilled at deflecting change in life.', authorphoto: 'assets/img/henry_little_2.png', author: 'Henry Little', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+
+						+media-post({media: 'assets/img/inspiration.png',fadeElipsis: false, fullwidth: false, category: 'Lifestyle', comments: 7, likes: 15,title: '4 Natural Ways To Have Young Skin', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.', authorphoto: 'assets/img/james_leman.png', author: 'James Leman', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+
+						+media-post({media: 'assets/img/inspiration2.png',noplay: true, fadeElipsis: false, fullwidth: false, category: 'Lifestyle', comments: 7, likes: 15,title: 'Six Hobbies That Can Help You Beat Stress', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.', authorphoto: 'assets/img/james_leman_2.png', author: 'James Leman', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+
+						+media-post({media: 'assets/img/inspiration3.png',noplay: true, fadeElipsis: false, fullwidth: false, category: 'Lifestyle', comments: 7, likes: 15,title: '10 Singals From Your Body Telling You Should Sleep More', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vehicula lorem and lacus. Vestibulum vitae mauris lorem ipsum doar.', authorphoto: 'assets/img/benjamin_miller.png', author: 'Benjamin Miller', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+
+					div.row.nomargin
+						div.large-4.medium-4.columms.float-left.padding-right-20
+	
+							+media-post({media: 'assets/img/inspiration4.png',fadeElipsis: true, fullwidth: true, category: 'Lifestyle', comments: 7, likes: 15,title: 'Food That Actually Taste Better When You Freeze', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vel vehicula lorem and lacus. Vestibulum vitae mauris.', authorphoto: 'assets/img/james_leman.png', author: 'James Leman', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+	
+						div.large-4.medium-4.columms.float-left.padding-right-20
+	
+							+media-post({media: 'assets/img/trip.png',noplay: true, fadeElipsis: true, fullwidth: true, category: 'Lifestyle', comments: 7, likes: 15,title: 'Why It’s Amazing To Date People Who Love Traveling', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vel vehicula lorem and lacus. Vestibulum vitae mauris.', authorphoto: 'assets/img/james_leman_2.png', author: 'Benjamin Miller', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+
+						div.large-4.medium-4.columms.float-left.padding-right-20
+	
+							+media-post({media: 'assets/img/lifestyle.png',noplay: true, fadeElipsis: true, fullwidth: true, category: 'Lifestyle', comments: 7, likes: 15,title: '5 Useful Tips for Novice Painters', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vel vehicula lorem and lacus. Vestibulum vitae mauris.', authorphoto: 'assets/img/henry_little_2.png', author: 'Henry Little', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+	
+					div.row.nomargin
+						div.large-6.medium-6.columms.float-left.padding-right-20
+	
+							+media-post({media: 'assets/img/lifestyle2.png',noplay: true, fadeElipsis: true, fullwidth: true, category: 'Lifestyle', comments: 7, likes: 15,title: '11 Fantastic Ways Passionate', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vel vehicula lorem and lacus. Vestibulum vitae mauris gravida, ipsu viverra urna at, dictume nunc fringilla quam.', authorphoto: 'assets/img/james_leman.png', author: 'James Leman', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+	
+						div.large-6.medium-6.columms.float-left.padding-right-20
+	
+							+media-post({media: 'assets/img/inspiration5.png',noplay: true, fadeElipsis: true, fullwidth: true, category: 'Lifestyle', comments: 7, likes: 15,title: 'Art Makes You Mentally Healthy', description: 'Lorem ipsum dolor sit amet, to consectetur  adipi scing elit. Nulla vel vehicula lorem and lacus. Vestibulum vitae mauris gravida, ipsu viverra urna at, dictume nunc fringilla quam.', authorphoto: 'assets/img/james_leman_2.png', author: 'Benjamin Miller', date: 'April 28, 2016&nbsp;&nbsp;10:15'})
+					div.row.nomargin
+						div.large-12.medium-12.columms.padding-right-20
+							div.float-right.morebtn
+								a(href='#')
+									span More&nbsp;&nbsp;
+								a.button.more(href='#')
+									i.material-icons arrow_forward
+				div.large-3.medium-3.columms.collapse.float-left.transparent
+					div.sidebar
+						div.sidebar-inner
+							div.search
+								input(type=text, value='Search')
+								a.button.search(href='#')
+									i.material-icons search
+							h4 Categories
+							hr
+							ul.categories
+								li
+									span.title Photography
+									span.count 195
+									div.clearfix
+									hr
+								li
+									span.title Illustration
+									span.count 15
+									div.clearfix
+									hr
+								li
+									span.title Graphic Design
+									span.count 36
+									div.clearfix
+									hr
+								li
+									span.title Web Design
+									span.count 220
+									div.clearfix
+									hr
+								li
+									span.title Videography
+									span.count 17
+									div.clearfix
+							h4 Subscribe
+							hr
+							div.input
+								p Name
+								input(type=text, value='Igor Ten')
+							div.input
+								p Email
+								input(type=text, value='email@address.com')
+							a.button.subscribe(href='#') Subscribe
+							table.orLine
+								tr
+									td(width='50%')
+										hr
+									td
+										span &nbsp;or&nbsp;
+									td(width='50%')
+										hr
+							div.sidebar-socials
+								- var socialicons = ['fa-facebook', 'fa-twitter','fa-vk', 'fa-pinterest-p', 'fa-tumblr','fa-dribbble'];
+								for icon in socialicons
+									a.button(id=icon, href='#')
+										i(class='fa ' + icon, aria-hidden='true')
+							h4 Tab Post Widget
+							hr
+							div.sidebar-toggle
+								a.button.toggle.active(href='#') Recent Post
+								a.button.toggle(href='#') Popular Post
+							div.sidebar-posts
+								+sidebar-post({media: 'assets/img/post1.png', fullwidth: false, comments: 17, title: 'Duis commodo elit sed nisi molestie', date: 'April 28, 2016'})
+								hr
+								+sidebar-post({media: 'assets/img/post2.png', fullwidth: false, comments: 17, title: 'Duis commodo elit sed nisi molestie', date: 'April 28, 2016'})
+								hr
+								+sidebar-post({media: 'assets/img/post3.png', fullwidth: false, comments: 17, title: 'Duis commodo elit sed nisi molestie', date: 'April 28, 2016'})
+								hr
+								+sidebar-post({media: 'assets/img/post4.png', fullwidth: false, comments: 17, title: 'Duis commodo elit sed nisi molestie', date: 'April 28, 2016'})
+							h4 Tags
+							hr
+							div.tags
+								- var tags = ['Photography', 'Webdesign','Youtube', 'Envato', 'Art','Themeforest','Illustration'];
+								for tag in tags
+									a.button.tag(href='#') #{tag}

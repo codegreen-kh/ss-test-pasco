@@ -1,0 +1,31 @@
+mixin sidebar-post(post)
+	div.side-post
+		div.row.nomargin
+			- if (post.fullwidth) {
+				div.large-12.medium-12.columms.collapse
+					+sidebar-post-picture(post)
+					+sidebar-post-content(post)
+			- } else {
+				div.large-5.medium-5.columms.float-left.collapse
+					+sidebar-post-picture(post)
+			- }
+	
+			- if (!post.fullwidth) {
+				div.large-7.medium-7.columms.float-left.collapse
+					+sidebar-post-content(post)
+			- }
+
+mixin sidebar-post-picture(post)
+	div.picture
+		a(href='#')
+			img.imgmedia(src=post.media)
+
+mixin sidebar-post-content(post)
+	div.content
+		p.date!= post.date
+		a.title(href='#')
+			h4= post.title
+		a.comments(href='#')
+			i.fa.fa-comments(aria-hidden='hidden')
+			span &nbsp;#{post.comments}
+	div.clearfix
