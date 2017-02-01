@@ -14,6 +14,10 @@ html(lang="en", class="no-js")
 		link(rel="stylesheet", href="assets/css/custom.css", type="text/css")
 		script(src="bower_components/jquery/dist/jquery.min.js")
 		script(src="bower_components/foundation-sites/dist/js/foundation.min.js")
+		script(src="bower_components/foundation-sites/dist/js/plugins/foundation.util.keyboard.min.js")
+		script(src="bower_components/foundation-sites/dist/js/plugins/foundation.util.box.min.js")
+		script(src="bower_components/foundation-sites/dist/js/plugins/foundation.util.triggers.min.js")
+		script(src="bower_components/foundation-sites/dist/js/plugins/foundation.dropdown.min.js")
 		script(src="plugins/jquery.bxslider/jquery.bxslider.min.js")
 		script(src="plugins/slick.carousel/slick/slick.min.js")
 		script(src="assets/js/app.js")
@@ -22,28 +26,35 @@ html(lang="en", class="no-js")
 		div.header
 			div.topmenu
 				div.topmenu-content.row
-					div.lagre-6.medium-6.columns.collapse
-						- var socialicons = ['fa-facebook', 'fa-twitter', 'fa-pinterest-p', 'fa-vk', 'fa-google-plus', 'fa-behance', 'fa-dribbble', 'fa-instagram'];
-						for icon in socialicons
-							a(href='#')
-								i(class='fa ' + icon, aria-hidden='true')
-					div.lagre-4.medium-4.columns.collapse
-						section.float-right
-							ul.dropdown.menu.float-right(data-dropdown-menu)
-								li
-									a(href='#')
-										div(class='fa fa-globe', aria-hidden='true')
-										span Eng
-										i(class='fa fa-angle-down', aria-hidden='true')
-										ul.menu
-											li
-												a(href='#') Eng
-											li
-												a(href='#') Rus
-							div.separator.float-right
-							a.signin.float-right(href='#')
-								div(class='fa fa-user-circle', aria-hidden='true')
-								span Sign In
+					div.lagre-12.medium-12.columns.collapse
+						div.socialIcons
+							- var socialicons = ['fa-facebook', 'fa-twitter', 'fa-pinterest-p', 'fa-vk', 'fa-google-plus', 'fa-behance', 'fa-dribbble', 'fa-instagram'];
+							for icon in socialicons
+								a(href='#')
+									i(class='fa ' + icon, aria-hidden='true')
+						ul.dropdown.menu.float-right(data-dropdown-menu)
+							li
+								a(href='#')
+									div(class='fa fa-globe', aria-hidden='true')
+									span Eng
+									i(class='fa fa-angle-down', aria-hidden='true')
+									ul.menu
+										li
+											a(href='#') Eng
+										li
+											a(href='#') Rus
+						div.separator.float-right
+						a.signin.float-right(href='#')
+							div(class='fa fa-user-circle', aria-hidden='true')
+							span Sign In
+			div.main-menu-mobile.hidden
+				div.row
+					a.float-left(href='#')
+						i.material-icons menu
+					a(href='#')
+						span Pasco
+					a.float-right(href='#')
+						i(class='fa fa-shopping-cart', aria-hidden='true')
 			div.main-menu
 				div.main-menu-content.row
 					div.lagre-12.medium-12.columns.collapse
@@ -112,6 +123,21 @@ html(lang="en", class="no-js")
 				li
 					img(src='assets/img/header_bg.jpg')
 		div.main-content
+			div.sort-bar-mobile.hidden
+				div.row
+					button.button.sortblog(type='button', data-toggle="drop1") Sort blog
+					div#drop1.dropdown-pane(data-dropdown="", data-hover="true", data-hover-pane="true")
+						ul
+							li
+								a(href='javascript:$("#drop1").foundation("close");') All
+							li
+								a(href='javascript:$("#drop1").foundation("close");') Photography
+							li
+								a(href='javascript:$("#drop1").foundation("close");') Lifestyle
+							li
+								a(href='javascript:$("#drop1").foundation("close");') Trip
+							li
+								a(href='javascript:$("#drop1").foundation("close");') Inspiration
 			div.sort-bar
 				div.row
 					div.sort-bar-inner.large-12.medium-12.columms.collapse
@@ -164,6 +190,10 @@ html(lang="en", class="no-js")
 				div.large-3.medium-3.columms.collapse.float-left.transparent
 					div.sidebar
 						div.sidebar-inner
+							div.about.hidden
+								h4 Pasco
+								p PASCO sit amet varius orci. Duis upse commodo elit sedamocid nisimole up stie, vitae fringilla justo fringilla. Lori Vestibulum libr portaman neque enia gravida elementum facilisis ipsum leonardo. Vestibulum loeuenim and libero, lobortis eu tortor ut, hendrerit  maxi tellus. Vivamus egestas massa leo, sit amet facilisis commodo.
+								a.button.readmore(href='#') Read more
 							div.search
 								input(type=text, value='Search')
 								a.button.search(href='#')
@@ -195,47 +225,59 @@ html(lang="en", class="no-js")
 									span.title Videography
 									span.count 17
 									div.clearfix
-							h4 Subscribe
-							hr
-							div.input
-								p Name
-								input(type=text, value='Igor Ten')
-							div.input
-								p Email
-								input(type=text, value='email@address.com')
-							a.button.subscribe(href='#') Subscribe
-							table.orLine
-								tr
-									td(width='50%')
-										hr
-									td
-										span &nbsp;or&nbsp;
-									td(width='50%')
-										hr
-							div.sidebar-socials
-								- var socialicons = ['fa-facebook', 'fa-twitter','fa-vk', 'fa-pinterest-p', 'fa-tumblr','fa-dribbble'];
-								for icon in socialicons
-									a.button(id=icon, href='#')
-										i(class='fa ' + icon, aria-hidden='true')
-							h4 Tab Post Widget
-							hr
-							div.sidebar-toggle
-								a.button.toggle.active(href='#') Recent Post
-								a.button.toggle(href='#') Popular Post
-							div.sidebar-posts
-								+sidebar-post({media: 'assets/img/post1.png', fullwidth: false, comments: 17, title: 'Duis commodo elit sed nisi molestie', date: 'April 28, 2016'})
+							div.subscribe
+								h4 Subscribe
 								hr
-								+sidebar-post({media: 'assets/img/post2.png', fullwidth: false, comments: 17, title: 'Duis commodo elit sed nisi molestie', date: 'April 28, 2016'})
+								div.input
+									p Name
+									input(type=text, value='Igor Ten')
+								div.input
+									p Email
+									input(type=text, value='email@address.com')
+								a.button.subscribe(href='#') Subscribe
+								table.orLine
+									tr
+										td(width='50%')
+											hr
+										td
+											span &nbsp;or&nbsp;
+										td(width='50%')
+											hr
+								div.sidebar-socials
+									- var socialicons = ['fa-facebook', 'fa-twitter','fa-vk', 'fa-pinterest-p', 'fa-tumblr','fa-dribbble'];
+									for icon in socialicons
+										a.button(id=icon, href='#')
+											i(class='fa ' + icon, aria-hidden='true')
+							div.tab-posts
+								h4 Tab Post Widget
 								hr
-								+sidebar-post({media: 'assets/img/post3.png', fullwidth: false, comments: 17, title: 'Duis commodo elit sed nisi molestie', date: 'April 28, 2016'})
-								hr
-								+sidebar-post({media: 'assets/img/post4.png', fullwidth: false, comments: 17, title: 'Duis commodo elit sed nisi molestie', date: 'April 28, 2016'})
+								div.sidebar-toggle
+									a.button.toggle.active(href='#') Recent Post
+									a.button.toggle(href='#') Popular Post
+								div.sidebar-posts
+									+sidebar-post({media: 'assets/img/post1.png', fullwidth: false, comments: 17, title: 'Duis commodo elit sed nisi molestie', date: 'April 28, 2016'})
+									hr
+									+sidebar-post({media: 'assets/img/post2.png', fullwidth: false, comments: 17, title: 'Duis commodo elit sed nisi molestie', date: 'April 28, 2016'})
+									hr
+									+sidebar-post({media: 'assets/img/post3.png', fullwidth: false, comments: 17, title: 'Duis commodo elit sed nisi molestie', date: 'April 28, 2016'})
+									hr
+									+sidebar-post({media: 'assets/img/post4.png', fullwidth: false, comments: 17, title: 'Duis commodo elit sed nisi molestie', date: 'April 28, 2016'})
 							h4 Tags
 							hr
 							div.tags
 								- var tags = ['Photography', 'Webdesign','Youtube', 'Envato', 'Art','Themeforest','Illustration'];
 								for tag in tags
 									a.button.tag(href='#') #{tag}
+							div.flickr.hidden
+								h4 Flickr
+								img.flickr(src='assets/img/flickr_placeholder.png')
+		div.footer-mobile.hidden
+			div.sidebar-socials
+				- var socialicons = ['fa-facebook', 'fa-twitter','fa-vk', 'fa-pinterest-p', 'fa-tumblr','fa-dribbble'];
+				for icon in socialicons
+					a.button(id=icon, href='#')
+						i(class='fa ' + icon, aria-hidden='true')
+			p.copyright © 2016 PASCO | All Rights Reserved
 		div.carousel
 			section.variable-slider
 				div
@@ -256,10 +298,13 @@ html(lang="en", class="no-js")
 					img(src='assets/img/car8.png')
 		div.sbscrb-section
 			div.row
-				div.large-12.medium-12.columms.collapse
-					span Surscribe to our newsletter
+				div.large-6.medium-6.columns.collapse
+					span.nowrap Surscribe to our newsletter
+				div.large-4.medium-4.columns.collapse
 					div.sbscrb
 						input(type=text, value='Email Address')
+				div.large-2.medium-2.columns.collapse
+					div.sbscrb
 						a.button.sbscrb(href='#') Subscribe
 		div.footer
 			div.row
