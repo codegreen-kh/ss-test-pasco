@@ -9,10 +9,13 @@ html(lang="en", class="no-js")
 		link(rel="stylesheet", href="assets/fonts/FontAwesome/font-awesome.min.css", type="text/css")
 		link(rel="stylesheet", href="plugins/jquery.bxslider/jquery.bxslider.css", type="text/css")
 		link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons", type="text/css")
+		link(rel="stylesheet", href="plugins/slick.carousel/slick/slick.css", type="text/css")
+		link(rel="stylesheet", href="plugins/slick.carousel/slick/slick-theme.css", type="text/css")
 		link(rel="stylesheet", href="assets/css/custom.css", type="text/css")
 		script(src="bower_components/jquery/dist/jquery.min.js")
 		script(src="bower_components/foundation-sites/dist/js/foundation.min.js")
 		script(src="plugins/jquery.bxslider/jquery.bxslider.min.js")
+		script(src="plugins/slick.carousel/slick/slick.min.js")
 		script(src="assets/js/app.js")
 	body
 		include mixins/allmixins
@@ -233,3 +236,146 @@ html(lang="en", class="no-js")
 								- var tags = ['Photography', 'Webdesign','Youtube', 'Envato', 'Art','Themeforest','Illustration'];
 								for tag in tags
 									a.button.tag(href='#') #{tag}
+		div.carousel
+			section.variable-slider
+				div
+					img(src='assets/img/car1.png')
+				div
+					img(src='assets/img/car2.png')
+				div
+					img(src='assets/img/car3.png')
+				div
+					img(src='assets/img/car4.png')
+				div
+					img(src='assets/img/car5.png')
+				div
+					img(src='assets/img/car6.png')
+				div
+					img(src='assets/img/car7.png')
+				div
+					img(src='assets/img/car8.png')
+		div.sbscrb-section
+			div.row
+				div.large-12.medium-12.columms.collapse
+					span Surscribe to our newsletter
+					div.sbscrb
+						input(type=text, value='Email Address')
+						a.button.sbscrb(href='#') Subscribe
+		div.footer
+			div.row
+				div.large-3.medium-3.columms.float-left.padding-right-30
+					h4 Pages Widget
+					ul.accordion(data-accordion).transparent
+						li.accordion-item(data-accordion-item)
+							a.accordion-title(href='#') Home
+							div.accordion-content(data-tab-content)
+								a(href='#') Service
+								br
+								a(href='#') FAQ
+								br
+								a(href='#') About
+						li.is-active.accordion-item(data-accordion-item)
+							a.accordion-title(href='#') Pages
+							div.accordion-content(data-tab-content)
+								a(href='#') Service
+								br
+								a(href='#') FAQ
+								br
+								a(href='#') About
+						li.accordion-item(data-accordion-item)
+							a.accordion-title(href='#') Portfolio
+							div.accordion-content(data-tab-content)
+								a(href='#') Service
+								br
+								a(href='#') FAQ
+								br
+								a(href='#') About
+						li.accordion-item(data-accordion-item)
+							a.accordion-title(href='#') Blog
+							div.accordion-content(data-tab-content)
+								a(href='#') Service
+								br
+								a(href='#') FAQ
+								br
+								a(href='#') About
+						li.accordion-item(data-accordion-item)
+							a.accordion-title(href='#') Shop
+							div.accordion-content(data-tab-content)
+								a(href='#') Service
+								br
+								a(href='#') FAQ
+								br
+								a(href='#') About
+				div.large-3.medium-3.columms.float-left.padding-right-30
+					div
+						h4 Twitter Widget
+						+twitter-item()
+						hr.gray
+						+twitter-item()
+						hr.gray
+						+twitter-item()
+						h4.inline Social Widget
+						div.sidebar-socials
+								- var socialicons = ['fa-facebook', 'fa-twitter','fa-vk', 'fa-pinterest-p', 'fa-tumblr','fa-dribbble'];
+								for icon in socialicons
+									a.button(id=icon, href='#')
+										i(class='fa ' + icon, aria-hidden='true')
+				div.large-3.medium-3.columms.float-left.padding-right-30
+					h4 Flickr Widget
+					img.flickr(src='assets/img/flickr_placeholder.png')
+				div.large-3.medium-3.columms.float-left
+					h4 News Letter
+					form.subscribe(action='subscribe')
+						div.input
+							input(type=text, value='Name')
+						div.input
+							input(type=text, value='Email Address')
+						div.input
+							textarea(rows='4') Message
+						a.button.subscribe(href='#') Subscribe
+		div.bottom-menu
+			div.row
+				div.large-7.medium-7.columns.collapse
+					div.main-menu
+						div.main-menu-content.row.nomargin
+							div.lagre-12.medium-12.columns.collapse
+								section
+									ul.dropdown.menu(data-dropdown-menu)
+										li.menu-item
+											a(href='#')
+												span Home
+										li.menu-item
+											a(href='#')
+												span Portfolio
+										li.menu-item
+											a(href='#')
+												span Blog
+										li.menu-item
+											a(href='#')
+												span Page
+										li.menu-item
+											a(href='#')
+												span Shop
+										li.menu-item
+											a(href='#')
+												span Components
+										li.menu-item
+											a(href='#')
+												span Features
+				div.large-5.medium-5.columns.collapse
+					section.btm-lang.float-right
+						ul.dropdown.menu.float-right(data-dropdown-menu)
+							li
+								a(href='#')
+									div(class='fa fa-globe', aria-hidden='true')
+									span Eng
+									i(class='fa fa-angle-down', aria-hidden='true')
+									ul.menu
+										li
+											a(href='#') Eng
+										li
+											a(href='#') Rus
+						div.search.float-right
+							input(type=text, value='Search')
+							a.button.search(href='#')
+								i.material-icons search

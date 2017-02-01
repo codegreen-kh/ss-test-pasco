@@ -6,12 +6,12 @@ mixin media-post(post)
 					+media-part(post)
 					+info-part(post)
 			- } else {
-				div.large-4.medium-4.columms.float-left.collapse.min-width-300
+				div.large-4.medium-4.columms.float-left.collapse
 					+media-part(post)
 			- }
 	
 			- if (!post.fullwidth) {
-				div.large-8.medium-8.columms.float-left.collapse.min-width-300
+				div.large-8.medium-8.columms.float-left.collapse
 					+info-part(post)
 			- }
 
