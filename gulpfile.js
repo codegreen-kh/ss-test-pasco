@@ -42,7 +42,9 @@ gulp.task('sass', function() {
       includePaths: sassPaths,
       outputStyle: 'compressed' // if css compressed **file size**
     })
-      .on('error', $.sass.logError))
+      .on('error', notify.onError(function (error) {
+    		$.sass.logError;
+	})))
     .pipe($.autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
     }))
